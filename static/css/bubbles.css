@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: rgb(134, 246, 250);
+}
+
+.h7 {
+    font-family: consolas;
+    font-size: 4em;
+    color: rgb(134, 246, 250);
+}
+
+.alr {
+    text-align: left;
+}
+
+.bubbleWrapper {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    background: #7d70ee;
+    background: -webkit-linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    background: linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    overflow: hidden;
+}
+
+.bubbleWrapper span {
+    position: absolute;
+    bottom: -50px;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: moveBubbles 10.5s linear infinite;
+}
+
+@keyframes moveBubbles{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-2500%);
+    }
+}

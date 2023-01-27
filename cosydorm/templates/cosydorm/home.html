@@ -1,0 +1,69 @@
+{% extends 'cosydorm/layout.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+
+<div class="bubbleWrapper">
+    <div class="col-11">
+        <div class="col-7 mt-5 ms-5">
+            <h2 class="h7  alr">Cossy Dorm Cleaners</h2>
+
+            <h5 class="alr">We clean, your clothes, your place and even we take care of all your things</h5>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<div class="col-11 mx-auto mt-5">
+    <div class="col-5 mx-auto c atxt1">
+        <h2>Laundry Services</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-5 mx-auto c">
+            <a class="nav-link atxt1" href="#">
+                <img src="{% static '/img/xls.png' %}" class="imgico" alt="XLSX" />
+                <h3>Pickup & Delivery</h3>
+            </a>
+            <p>En esta seccion es para convertir los catalogos en fotos .jpg individuales.</p>
+        </div>
+
+        <div class="col-5 mx-auto c">
+            <img src="{% static '/img/Google_Drive_icon.png' %}" class="imgico" alt="XLSX" />
+            <a class="nav-link atxt1" href="#">
+                <h3>Wash & Fold</h3>
+            </a>
+            <p>En esta seccion se suben los catalogos ya procesados a .jpg al drive de Google info.zanahora@gmail.com en catalogos y la carpeta con la fecha del dia en que se suban</p>
+        </div>
+    </div>
+</div>
+
+<div class="col-11 mx-auto mt-5">
+    <div class="row">
+        <div class="col-5 mx-auto c">
+            <img src="{% static '/img/Google_Drive_icon.png' %}" class="imgico" alt="XLSX" />
+            <a class="nav-link atxt1" href="#">
+                <h3>Dry Cleaning</h3>
+            </a>
+            <p>Esta parte es para generacion automatica de cuentas de cobro de las ventas de Rossy en Leonisa y Novaventa.</p>
+        </div>
+
+        <div class="col-5 mx-auto c">
+            <img src="{% static '/img/xls.png' %}" class="imgico" alt="XLSX" />
+            <a class="nav-link atxt1" href="#">
+                <h3>Laundering & Pressing</h3>
+            </a>
+            <p>This section show how to create, read and modify .pdf files.</p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
