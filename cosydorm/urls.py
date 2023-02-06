@@ -12,6 +12,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('', home, name='home'),
+    path('laundry', laundry, name='laundry'),
+
     # path('privacy', privacy, name='privacy'),
     # path('page401', page401, name='page401'),
 

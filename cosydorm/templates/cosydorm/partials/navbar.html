@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="navbar navbar-expand-lg navbar-dark a1 stic">
+<nav class="navbar navbar-expand-lg a4 stic">
     <div class="container-fluid">
     <a class="navbar-brand " href="/"><img src="{% static '/img/logos/bwlogo.png' %}" class="imgnav" alt="LOGO" /></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDrop" aria-controls="navbarDrop" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,21 +8,24 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarDrop">
         <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link atxt1" href="/">HOME</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">LAUNDRY SERVICES</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">CLEANING SERVICES</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">STORAGE SERVICES</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">PRICING</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">BOCKING</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">TESTIMONIALS</a></li>
-            <li class="nav-item"><a class="nav-link atxt1" href="#">US</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="/">HOME</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="laundry">LAUNDRY</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="#">CLEANING</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="#">STORAGE</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="#">BOCKING</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="#">TESTIMONIALS</a></li>
+            <li class="nav-item"><a class="nav-link atxt3" href="#">US</a></li>
 
         </ul>
         <ul class="navbar-nav mt-2 mt-lg-0">
             {% if user.is_authenticated %}
-                <li class="nav-item navtext"><a class="nav-link atxt1" href="#">Out</a></li>
+                <li class="nav-item navtext"><a class="nav-link atxt3" href="#">Out</a></li>
             {% else %}
-                <li class="nav-item navtext"><a class="nav-link atxt1" href="#">Log</a></li>
+                <li class="nav-item navtext">
+                    <a class="nav-link atxt3" href="#">
+                        <img src="{% static '/img/icons/enter.png' %}" class="imgicoLogin" alt="LOGO" />
+                    </a>
+                </li>
             {% endif %}
         </ul>
     </div>
