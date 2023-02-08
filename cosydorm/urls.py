@@ -13,6 +13,7 @@ urlpatterns = [
 
     path('', home, name='home'),
     path('laundry', laundry, name='laundry'),
+    path('cleaning', cleaning, name='cleaning'),
 
     # path('privacy', privacy, name='privacy'),
     # path('page401', page401, name='page401'),
@@ -28,3 +29,4 @@ if settings.DEBUG:
 # 401 Unauthorized
 # 403 Forbidden
 # 404 Not Found
+

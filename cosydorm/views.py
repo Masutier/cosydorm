@@ -12,3 +12,9 @@ def laundry(request):
 
     context={"title": "Laundry"}
     return render(request, 'cosydorm/laundry.html', context)
+
+
+def cleaning(request):
+
+    context={"title": "Cleaning"}
+    return render(request, 'cosydorm/cleaning.html', context)

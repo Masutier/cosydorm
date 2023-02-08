@@ -1,3 +1,5 @@
+/* bubbleWrapper I */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -36,6 +38,79 @@
 }
 
 @keyframes moveBubbles{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-2500%);
+    }
+}
+
+/* bubbleWrapper II */
+
+.h8 {
+    font-family: consolas;
+    font-size: 4em;
+    color: rgb(134, 246, 250);
+    text-shadow: 3px 3px #130d57;
+}
+
+.shadow {
+    text-shadow: 2px 2px #372e9e;
+}
+
+.bubbleWrapperII {
+    position: relative;
+    height: 25vh;
+    display: flex;
+    background: #7d70ee;
+    background: -webkit-linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    background: linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    overflow: hidden;
+}
+
+.bubbleWrapperII span {
+    position: absolute;
+    bottom: -50px;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: moveBubblesII 10.5s linear infinite;
+}
+
+@keyframes moveBubblesII{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-2500%);
+    }
+}
+
+/* bubbleWrapper III */
+
+.bubbleWrapperIII {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    background: #7d70ee;
+    background: -webkit-linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    background: linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    overflow: hidden;
+}
+
+.bubbleWrapperIII span {
+    position: absolute;
+    bottom: -50px;
+    background-color: transparent;
+    box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: moveBubblesIII 10.5s linear infinite;
+}
+
+@keyframes moveBubblesIII{
     from{
         transform: translateY(0%);
     }

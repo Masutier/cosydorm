@@ -1,6 +1,8 @@
 /* common */
 
-body {
+/* to generate gradient https://cssgradient.io */
+
+.bodyI {
     color: aliceblue;
     background: #7d70ee;
     background: -webkit-linear-gradient(to right, #4141a1, #372e9e, #7d70ee);
@@ -39,6 +41,42 @@ body {
     text-align: right
 }
 
+/* LAUNDRY */
+
+.imgLaun {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 20px;
+    -webkit-margin-bottom-collapse: initial;
+    z-index: 1;
+}
+
+.imgLaunII {
+    width: 80%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 20px;
+    -webkit-margin-bottom-collapse: initial;
+    z-index: 1;
+}
+
+.bodyx {
+    color: aliceblue;
+    background: rgb(64,184,240);
+    background: linear-gradient(0deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
+}
+
+.bodyy {
+    background: rgb(64,184,240);
+    background: radial-gradient(circle, rgba(64,184,240,1) 0%, rgba(47, 41, 236) 86%);
+}
+
+
+
+
 /* navbart */
 
 .imgnav {
@@ -47,7 +85,6 @@ body {
     vertical-align: middle;
     border-style: none;
     -webkit-margin-bottom-collapse: initial;
-    margin-right: 30PX;
     padding-top: 2px;
     padding-left: 30px;
     z-index: 1;
@@ -58,7 +95,6 @@ body {
     vertical-align: middle;
     border-style: none;
     -webkit-margin-bottom-collapse: initial;
-    margin-right: 30PX;
     padding-top: 2px;
     padding-left: 30px;
     z-index: 1000;
@@ -90,7 +126,7 @@ body {
 /* contact */
 
 .backcol {
-    background-color: #7d70ee;
+    background-color: rgb(47, 41, 236);
 }
 
 .imgred{
@@ -99,7 +135,6 @@ body {
     vertical-align: middle;
     border-style: none;
     -webkit-margin-bottom-collapse: initial;
-    margin-right: 30PX;
     padding-top: 2px;
     padding-left: 30px;
     z-index: 1000;
@@ -115,7 +150,8 @@ body {
 
 .back-black {
     color: aliceblue;
-    background-color: black;
+    background: rgb(57,46,244);
+    background: radial-gradient(circle, rgb(77, 67, 250) 0%, rgba(113,109,240,1) 21%, rgba(62,62,228,1) 57%, rgba(0,212,255,1) 100%);
 }
 
 /* back-to-top */
@@ -148,7 +184,6 @@ body {
     vertical-align: middle;
     border-style: none;
     -webkit-margin-bottom-collapse: initial;
-    margin-right: 30PX;
     padding-top: 2px;
     padding-left: 30px;
     z-index: 1000;
@@ -160,7 +195,6 @@ body {
     vertical-align: middle;
     border-style: none;
     -webkit-margin-bottom-collapse: initial;
-    margin-right: 30PX;
     padding-top: 2px;
     padding-left: 30px;
     z-index: 1000;
@@ -172,7 +206,6 @@ body {
     vertical-align: middle;
     border-style: none;
     -webkit-margin-bottom-collapse: initial;
-    margin-right: 30PX;
     padding-top: 2px;
     padding-left: 30px;
     z-index: 1000;
