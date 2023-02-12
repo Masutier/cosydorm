@@ -1,0 +1,7 @@
+venv
+venv/
+products.txt
+cosydorm.db
+
+cosydorm/__pycache__
+static/docs/*

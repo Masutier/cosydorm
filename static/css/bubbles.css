@@ -1,12 +1,5 @@
 /* bubbleWrapper I */
 
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    color: rgb(134, 246, 250);
-}
-
 .h7 {
     font-family: consolas;
     font-size: 4em;
@@ -17,27 +10,27 @@
     text-align: left;
 }
 
-.bubbleWrapper {
+.bubbleWrapperI {
+    z-index: 666;
     position: relative;
     height: 50vh;
     display: flex;
-    background: #7d70ee;
-    background: -webkit-linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
-    background: linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    background: rgb(64,184,240);
+    background: linear-gradient(180deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
     overflow: hidden;
 }
 
-.bubbleWrapper span {
+.bubbleWrapperI span {
     position: absolute;
     bottom: -50px;
     background-color: transparent;
     box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
     border-radius: 50%;
     pointer-events: none;
-    animation: moveBubbles 10.5s linear infinite;
+    animation: moveBubblesIII 10.5s linear infinite;
 }
 
-@keyframes moveBubbles{
+@keyframes moveBubblesIII{
     from{
         transform: translateY(0%);
     }
@@ -61,12 +54,12 @@
 
 .bubbleWrapperII {
     position: relative;
-    height: 25vh;
+    height: 50vh;
     display: flex;
-    background: #7d70ee;
-    background: -webkit-linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
-    background: linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
+    background: rgb(64,184,240);
+    background: linear-gradient(180deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
     overflow: hidden;
+    padding: 30px 100px;
 }
 
 .bubbleWrapperII span {
@@ -74,43 +67,12 @@
     bottom: -50px;
     background-color: transparent;
     box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
-    border-radius: 50%;
+    border-radius: 30%;
     pointer-events: none;
     animation: moveBubblesII 10.5s linear infinite;
 }
 
 @keyframes moveBubblesII{
-    from{
-        transform: translateY(0%);
-    }
-    to{
-        transform: translateY(-2500%);
-    }
-}
-
-/* bubbleWrapper III */
-
-.bubbleWrapperIII {
-    position: relative;
-    height: 50vh;
-    display: flex;
-    background: #7d70ee;
-    background: -webkit-linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
-    background: linear-gradient(to bottom, #4141a1, #372e9e, #7d70ee);
-    overflow: hidden;
-}
-
-.bubbleWrapperIII span {
-    position: absolute;
-    bottom: -50px;
-    background-color: transparent;
-    box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
-    border-radius: 50%;
-    pointer-events: none;
-    animation: moveBubblesIII 10.5s linear infinite;
-}
-
-@keyframes moveBubblesIII{
     from{
         transform: translateY(0%);
     }

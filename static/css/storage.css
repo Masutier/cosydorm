@@ -1,0 +1,118 @@
+/* STORAGE sec-01 */
+
+sectionI{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px;
+    color: #9999ff;
+}
+.containerI{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contentI{
+    position: relative;
+    width: 1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contentI .imageI{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+.contentI .imageI img{
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.contentI .imageII{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+.contentI .imageII img{
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.contentI .text-boxI{
+    z-index: 222;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 400px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transform: translate(-80px, 80px);
+}
+.contentI .text-boxI h3{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.contentI .text-boxI p{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* LAUNDRY section sec-02 */
+
+.infoI{
+    width: 700px;
+    margin-left: 50px;
+}
+.info-titleI{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.infoI p{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.infoII{
+    width: 700px;
+    margin-left: 50px;
+}
+.info-titleII{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.infoII p{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.infoIII{
+    width: 700px;
+    margin-left: 50px;
+}
+.info-titleIII{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.infoIII p{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}

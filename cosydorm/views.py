@@ -18,3 +18,9 @@ def cleaning(request):
 
     context={"title": "Cleaning"}
     return render(request, 'cosydorm/cleaning.html', context)
+
+
+def storage(request):
+
+    context={"title": "Storage"}
+    return render(request, 'cosydorm/storage.html', context)

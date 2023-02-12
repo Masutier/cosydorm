@@ -1,27 +1,51 @@
 /* common */
-
 /* to generate gradient https://cssgradient.io */
 
-.bodyI {
-    color: aliceblue;
-    background: #7d70ee;
-    background: -webkit-linear-gradient(to right, #4141a1, #372e9e, #7d70ee);
-    background: linear-gradient(to right, #4141a1, #372e9e, #7d70ee);
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    color: rgb(134, 246, 250);
+    font-family: consolas;
 }
-.borde {
+.bodyI{
+    color: aliceblue;
+    background: rgb(47, 41, 236);
+    font-family: consolas;
+}
+.bodyx{
+    color: aliceblue;
+    background: rgb(64,184,240);
+    background: linear-gradient(0deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
+    font-family: consolas;
+}
+.bodyy{
+    background: rgb(64,184,240);
+    background: radial-gradient(circle, rgba(64,184,240,1) 0%, rgba(47, 41, 236) 86%);
+    font-family: consolas;
+}
+.bodyz{
+    color: aliceblue;
+    background: rgb(64,184,240);
+    background: linear-gradient(180deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
+    font-family: consolas;
+}
+
+/* GENERAL */
+
+.borde{
     border: solid 1px black !important;
 }
-.c {
+.c{
     text-align: center !important;
 }
-.hidden {
+.hidden{
     display: none;
 }
-.hr {
+.hr{
     color: rgb(194, 194, 242);
     height: 3px !important;
 }
-
 .sticky {
     position: sticky;
     top: 10px;
@@ -41,7 +65,86 @@
     text-align: right
 }
 
-/* LAUNDRY */
+/* LAUNDRY section sec-01 */
+
+section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px;
+    color: #9999ff;
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.main-title{
+    font-size: 4em;
+    margin-bottom: 50px;
+}
+.content{
+    position: relative;
+    width: 1150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content .image{
+    position: relative;
+    width: 800px;
+    height: 400px;
+    overflow: hidden;
+}
+.content .image img{
+    z-index: 111;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.content .text-box{
+    z-index: 222;
+    background: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    max-width: 400px;
+    border: 1px solid rgb(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transform: translate(-80px, 80px);
+}
+.content .text-box h3{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+.content .text-box p{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* LAUNDRY section sec-02 */
+
+.info{
+    width: 700px;
+    margin-left: 50px;
+}
+.info-title{
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.info p{
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* IMAGES */
 
 .imgLaun {
     width: 100%;
@@ -63,19 +166,32 @@
     z-index: 1;
 }
 
-.bodyx {
-    color: aliceblue;
-    background: rgb(64,184,240);
-    background: linear-gradient(0deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
+.imgclean {
+    width: 70%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 20px;
+    -webkit-margin-bottom-collapse: initial;
+    z-index: 1;
 }
 
-.bodyy {
-    background: rgb(64,184,240);
-    background: radial-gradient(circle, rgba(64,184,240,1) 0%, rgba(47, 41, 236) 86%);
+/* CLEANING */
+
+.h9 {
+    font-family: consolas;
+    text-shadow: 1px 1px #130d57;
 }
 
+.img {
+    max-width: 80%;
+    height: auto;
+}
 
-
+ul.a {
+    align-items: flex-start;
+    list-style: none;
+}
 
 /* navbart */
 
@@ -111,7 +227,7 @@
 .stic {
     position: sticky;
     top: 0px;
-    z-index: 1;
+    z-index: 999;
 }
 
 .back-clear {
@@ -129,7 +245,7 @@
     background-color: rgb(47, 41, 236);
 }
 
-.imgred{
+.imgred {
     width: 100px;
     height: auto;
     vertical-align: middle;
@@ -143,9 +259,8 @@
 /* footer */
 
 .b-fixed{
-    position: fixed !important;
-    bottom: 10px;
-    z-index: 1;
+    margin-bottom: 20px;
+    z-index: 999;
 }
 
 .back-black {

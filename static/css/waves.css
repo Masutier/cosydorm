@@ -17,8 +17,5 @@ section {
     left: 0;
     width: 100%;
     height: 215px;
-    background: #000;
-    background: url('/static/img/wave.png');
-    background-size: cover;
-    background-repeat: no-repeat;
+    z-index: 0;
 }
