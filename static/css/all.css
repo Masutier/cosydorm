@@ -124,6 +124,7 @@ section{
     margin-bottom: 10px;
 }
 .content .text-box p{
+    color: #000070;
     font-size: 1.3em;
     margin-bottom: 10px;
 }
@@ -294,7 +295,7 @@ ul.a {
 /* ICONS */
 
 .imgico{
-    width: 80px;
+    width: 120px;
     height: auto;
     vertical-align: middle;
     border-style: none;
