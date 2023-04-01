@@ -17,22 +17,21 @@
     <script src="https://unpkg.com/scrollreveal"></script>
 
     {% if title %}
-        <title>CozyDorm - {% block title %}{% endblock %}</title>
+        <title>MyCozyDorm - {% block title %}{% endblock %}</title>
     {% else %}
-        <title>CozyDorm Cleaning</title>
+        <title>MyCozyDorm Cleaning</title>
     {% endif %}
 
 </head>
 
 <body class="bodyI">
-
     {% include 'cosydorm/partials/navbar.html' %}
 
-    <div class="col-12 mx-auto ">
-        {% if messages %}
-            {% include 'cosydorm/partials/messages.html' %}
-        {% endif %}
+    {% if messages %}
+        {% include 'cosydorm/partials/messages.html' %}
+    {% endif %}
 
+    <div class="col-12 mx-auto ">
         {% block content %}
         {% endblock content %}
     </div>

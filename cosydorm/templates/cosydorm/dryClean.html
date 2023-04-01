@@ -1,0 +1,87 @@
+{% extends 'cosydorm/layout.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+{% include 'cosydorm/partials/banner.html' %}
+
+<section class="sec-04 bodyx">
+    <div class="container">
+        <div class="content">
+            <div class="image">
+                <img src="{% static '/img/laundry/drycleaning.jpg' %}" alt="laundry"/>
+            </div>
+            <div class="text-box">
+                <h3 class="info-title">DRY CLEANING</h3>
+                <p class="mt-3">We use the latest technology</p>
+                <p class="mt-3">That make us the best in what we do and the care to your clothes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="col-12 mx-auto p-5 bodyz">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <h2 class="p-2 h9">Services Include</h2>
+            <h4 class="p-2 h9">If you are alergic or prefeer special brands, Please let us know</h4>
+            <div class="row">
+                <div class="col-6">
+                    <h3 class="h9">DRY CLEANING</h3>
+                    <ul class="a h9">
+                        <li>
+                            <h4>Manual Handle Stains</h4>
+                            <h4>Dry cleaning Machine</h4>
+                            <h4>Press</h4>
+                            <h4>Hangers</h4>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-5 mt-2">
+            <h2 class="h9 mb-3">Prices</h2>
+            <h3 class="h9">Dry Cleaning</h3>
+            <div class="row">
+                <div class="col-6">
+                    <ul class="a h9">
+                        <li>
+                            <h5>Shirts</h5>
+                            <h5>Pants</h5>
+                            <h5>Polo Shirt</h5>
+                            <h5>Blazers</h5>
+                            <h5>Blouse</h5>
+                            <h5>2 piece suit</h5>
+                            <h5>Dress</h5>
+                            <h5>Long Dress</h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul class="a h9">
+                        <li>
+                            <h5>$3.00</h5>
+                            <h5>$7.00</h5>
+                            <h5>$6.00</h5>
+                            <h5>$9.00</h5>
+                            <h5>$6.00</h5>
+                            <h5>$16.00</h5>
+                            <h5>$12.00</h5>
+                            <h5>$16.00</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{% static 'js/bubblesII.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/laundry.js' %}" type="text/javascript"></script>
+
+{% endblock %}

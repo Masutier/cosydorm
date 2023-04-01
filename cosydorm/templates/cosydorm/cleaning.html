@@ -5,56 +5,8 @@
 
 {% block content %}
 
+{% include 'cosydorm/partials/banner.html' %}
 
-<div class="bubbleWrapperII">
-    <div class="col-11">
-        <div class="col-7 mt-1 ms-5">
-            <h2 class="h7 alr ">Cleaning</h2>
-            <h2 class="h8 alr">CozyDorm Cleaners</h2>
-            <h5 class="alr">We clean, your clothes, your place and even we take care of all your things</h5>
-        </div>
-    </div>
-</div>
-
-<bodycard>
-    <div class="containerXI">
-        <div class="cardXI">
-            <div class="contentXI">
-                <div class="imgcardX">
-                    <img src="{% static '/img/cleaning/singledorm.jpg' %}" alt="cleaning">
-                </div>
-                <h3>Single Dorm</h3>
-            </div>
-        </div>
-
-        <div class="cardXI">
-            <div class="contentXI">
-                <div class="imgcardX">
-                    <img src="{% static '/img/cleaning/fullsinglequad.jpg' %}" alt="cleaning">
-                </div>
-                <h3>Full Single Quad</h3>
-            </div>
-        </div>
-
-        <div class="cardXI">
-            <div class="contentXI">
-                <div class="imgcardX">
-                    <img src="{% static '/img/cleaning/doubleroom.jpg' %}" alt="cleaning">
-                </div>
-                <h3>Double Dorm</h3>
-            </div>
-        </div>
-
-        <div class="cardXI">
-            <div class="contentXI">
-                <div class="imgcardX">
-                    <img src="{% static '/img/cleaning/fulldouble.jpg' %}" alt="cleaning">
-                </div>
-                <h3>Full Doble Dorm</h3>
-            </div>
-        </div>
-    </div>
-</bodycard>
 
 <div class="col-12 mx-auto p-5 bodyz">
     <div class="row">
@@ -62,7 +14,7 @@
             <h2 class="p-3 h9">Services Include</h2>
             <div class="row">
                 <div class="col-4">
-                    <h3>Dorm</h3>
+                    <h3 class="h9">Dorm</h3>
                     <ul class="a h9">
                         <li>
                             <h4>Vacuuming</h4>
@@ -74,7 +26,7 @@
                 </div>
 
                 <div class="col-4">
-                    <h3>Bathroom</h3>
+                    <h3 class="h9">Bathroom</h3>
                     <ul class="a h9">
                         <li>
                             <h4>Wash</h4>
@@ -131,7 +83,5 @@
 </div>
 
 <script src="{% static 'js/bubblesII.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/vanilla-tilt.babel.min.js' %}" type="text/javascript"></script>
-<script src="{% static 'js/cards.js' %}" type="text/javascript"></script>
 
 {% endblock %}

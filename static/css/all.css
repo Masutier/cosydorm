@@ -216,15 +216,6 @@ ul.a {
     padding-left: 30px;
     z-index: 1000;
 }
-.atxt1 {
-    color: #9999ff !important;
-    
-}
-.atxt3 {
-    color: #000070 !important;
-    font-size: large;
-    font-weight: bold;
-}
 .stic {
     position: sticky;
     top: 0px;

@@ -6,135 +6,15 @@
 {% block content %}
 
 
-<div class="bubbleWrapperII">
-    <div class="col-11">
-        <div class="col-7 mt-4 ms-5">
-            <h2 class="h7 alr ">Cleaning</h2>
-            <h2 class="h8 alr">CozyDorm Cleaners</h2>
-            <h5 class="alr">We clean, your clothes, your place and even we take care of all your things</h5>
-        </div>
-    </div>
-</div>
+{% include 'cosydorm/partials/banner.html' %}
 
-<div class="col-12 mx-auto pt-5 pb-3 bodyx">
-    <div class="col-11 mx-auto">
-    <h2>The Bedrooms</h2>
-        <div class="col-10 mx-auto pt-5 pb-5">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{% static '/img/cleaning/singledorm.jpg' %}" class="card-img-top mx-auto" alt="cleaning">
-                        <div class="card-body">
-                            <h3 class="atxt3 c">Single Dorm</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{% static '/img/cleaning/fullsinglequad.jpg' %}" class="card-img-top mx-auto pt-4" alt="cleaning">
-                        <div class="card-body">
-                            <h3 class="atxt3 c">Full Single Quad</h3>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col">
-                <div class="card h-100">
-                        <img src="{% static '/img/cleaning/doubleroom.jpg' %}" class="card-img-top mx-auto pt-3" alt="cleaning">
-                        <div class="card-body atxt3">
-                            <h3 class="atxt3 c">Double Dorm</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="{% static '/img/cleaning/fulldouble.jpg' %}" class="card-img-top mx-auto pt-3" alt="cleaning">
-                        <div class="card-body">
-                            <h3 class="atxt3 c">Full Doble Dorm</h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="col-12 mx-auto p-5 bodyy">
-    <div class="row">
-        <div class="col-6  mx-auto">
-            <h2 class="p-3 h9">Services Include</h2>
-
-            <div class="row">
-
-                <div class="col-4">
-                    <h3>Dorm</h3>
-                    <ul class="a h9">
-                        <li>
-                            <h4>Vacuuming</h4>
-                            <h4>Dusting</h4>
-                            <h4>Make Bed</h4>
-                            <h4>Organize </h4>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-4">
-                    <h3>Bathroom</h3>
-                    <ul class="a h9">
-                        <li>
-                            <h4>Wash</h4>
-                            <h4>disinfect</h4>
-                            <h4>mop</h4>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-4">
-                    <h3 class="h9">Common Area</h3>
-                    <ul class="a h9">
-                        <li>
-                            <h4>Vacuuming</h4>
-                            <h4>Dusting</h4>
-                        </li>
-                    </ul>
-                </div>
-                
-            </div>
-        </div>
-        
-        <div class="col-5">
-            <h2 class="p-3 h9">Prices</h2>
-            <div class="row">
-
-                <div class="col-6">
-                    <ul class="a h9">
-                        <li>
-                            <h5>Single Dorm</h5>
-                            <h5>Single Dorm + bathroom</h5>
-                            <h5>Full Single Quad</h5>
-                            <h5>Double Room</h5>
-                            <h5>Double Room + bathroom</h5>
-                            <h5>Full Doble Dorm</h5>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-4">
-                    <ul class="a h9">
-                        <li>
-                            <h5>$50.00</h5>
-                            <h5>$70.00</h5>
-                            <h5>$280.00</h5>
-                            <h5>$80.00</h5>
-                            <h5>$100.00</h5>
-                            <h5>$140.00</h5>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
+<div class="col-9 mx-auto p-5 mt-5 rounded bodyz">
+    <div class="col-10 mx-auto mt-5">
+        {% for contact in contactMess %}
+            {{ contact.name }}
+            {{ contact.message }}
+        {% endfor %}
     </div>
 </div>
 

@@ -1,0 +1,187 @@
+{% extends 'cosydorm/layout.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+{% include 'cosydorm/partials/banner.html' %}
+
+
+<div class="col-11 mx-auto p-5 mt-5 rounded bodyz">
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Does MyCozyDorm provide dry cleanning?
+                </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    <strong>Yes,</strong> We provide Dry Cleaning as an important item in our products portfolio.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" 
+                aria-expanded="false" aria-controls="flush-collapseTwo">
+                    What happens if you lose some of my clothes?
+                </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    We track your loundry from pick up all the way through delivery back to you. We do not mix your clothes with other customers.
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" 
+                aria-expanded="false" aria-controls="flush-collapseThree">
+                    What happend if I'm not happy with MyCozyDorm service?
+                </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    If you are not happy with the results, we will re-wash your clothes free. If you have a concern please call us to our costumer services.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" 
+                aria-expanded="false" aria-controls="flush-collapseFour">
+                    What products do you use?
+                </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    We use the best laundry products. We will use bleach in your whites upon request.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" 
+                aria-expanded="false" aria-controls="flush-collapseFive">
+                    Who wash my clothes?
+                </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    Our staff are hired and trained specifically to wash your clothes.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" 
+                aria-expanded="false" aria-controls="flush-collapseSix">
+                    Where do you wash my clothes?
+                </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    We have our loundry processing facilities. 
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" 
+                aria-expanded="false" aria-controls="flush-collapseSeven">
+                    What about delicates?
+                </button>
+            </h2>
+            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    We will air dry, low heat dry, wash in delicate cycle and wash separately. Let us know if your clothes needs specific intructions.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" 
+                aria-expanded="false" aria-controls="flush-collapseEight">
+                    When is my laundry returned?
+                </button>
+            </h2>
+            <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    Our standard turnaround is 2 days, if you need it book sooner you can request next day delivery.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" 
+                aria-expanded="false" aria-controls="flush-collapseNine">
+                    Can I sign up for recurring laundry services?
+                </button>
+            </h2>
+            <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    Yes, we provide a form upon request
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" 
+                aria-expanded="false" aria-controls="flush-collapseTen">
+                    How much does MyCozyDorm charge for the cleanning of apartments, dorms and Airbnbs?
+                </button>
+            </h2>
+            <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    Depend on the condition of your home and number of rooms. Get a free estimate. We work around your schedule to provide you the most convenient and flexible service.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" 
+                aria-expanded="false" aria-controls="flush-collapseEleven">
+                    Who will cleaning my home?
+                </button>
+            </h2>
+            <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    An assigned team of profesionals will clean your home. All employees are uniformed, insured and bonded.
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button bg-primary border border-primary border-start-0 rounded atxt3 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" 
+                aria-expanded="false" aria-controls="flush-collapseTwelve">
+                    Do I need to provide cleaning supplies or equipment?
+                </button>
+            </h2>
+            <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body atxt0">
+                    No, MyCozzyDorm brings all the equipment and normal cleaning supplies. If you have a special product you would prefer, our staff will be more than happy to accommodate you.
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{% static 'js/bubblesII.js' %}" type="text/javascript"></script>
+
+{% endblock %}

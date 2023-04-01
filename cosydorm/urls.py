@@ -13,8 +13,11 @@ urlpatterns = [
 
     path('', home, name='home'),
     path('laundry', laundry, name='laundry'),
+    path('dryClean', dryClean, name='dryClean'),
     path('cleaning', cleaning, name='cleaning'),
     path('storage', storage, name='storage'),
+    path('fq', fq, name='fq'),
+    path('us', us, name='us'),
 
     # path('privacy', privacy, name='privacy'),
     # path('page401', page401, name='page401'),

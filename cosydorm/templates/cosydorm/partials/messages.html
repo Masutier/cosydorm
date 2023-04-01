@@ -1,10 +1,10 @@
 
-<ul class="messages">
+<div class="alert alert-primary alert-dismissible fade show atxt3" role="alert">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }} lists ytxt1"{% endif %}><h3>***** {{ message }} *****</h3></li>
+        {{ message }}
     {% endfor %}
-</ul>
-
+    <button type="button" class="btn-close ytxt1" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 
 <!-- 
 == Bootstrap Messages tags ==

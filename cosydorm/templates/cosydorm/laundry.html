@@ -5,16 +5,7 @@
 
 {% block content %}
 
-
-<div class="bubbleWrapperII">
-    <div class="col-11">
-        <div class="col-7 mt-1 ms-5">
-            <h2 class="h7 alr ">Laundry</h2>
-            <h2 class="h8 alr">CozyDorm Cleaners</h2>
-            <h5 class="alr">We clean, your clothes, your place and even we take care of all your things</h5>
-        </div>
-    </div>
-</div>
+{% include 'cosydorm/partials/banner.html' %}
 
 <section class="sec-01 bodyx">
     <div class="container">
@@ -32,22 +23,21 @@
     </div>
 </section>
 
-
 <section class="sec-02 bodyz">
     <div class="container">
         <div class="content">
-            <div class="image">
-                <img src="{% static '/img/laundry/dryers.jpg' %}" alt="laundry"/>
-            </div>
             <div class="text-box">
                 <h3>DRY</h3>
                 <p class="mt-3">Our machines are allways in the best conditions</p>
                 <p class="mt-3">That make us the best in what we do and the care to your clothes.</p>
             </div>
+            <div class="image">
+                <img src="{% static '/img/laundry/dryers.jpg' %}" alt="laundry"/>
+            </div>
+            
         </div>
     </div>
 </section>
-
 
 <section class="sec-03 bodyx">
     <div class="container">
@@ -64,21 +54,97 @@
     </div>
 </section>
 
+<div class="col-12 mx-auto p-5 bodyx">
+    <div class="row">
+        <div class="col-6 mx-auto">
+            <h2 class="p-2 h9">Services Include</h2>
+            <h4 class="p-2 h9">If you are alergic or prefeer special brands, Please let us know</h4>
+            <div class="row">
+                <div class="col-5">
+                    <h3 class="h9">WASH</h3>
+                    <ul class="a h9">
+                        <li>
+                            <h4>Washing Machine</h4>
+                            <h4>Soup</h4>
+                            <h4>Bleach (if needed)</h4>
+                            <h4>Softener</h4>
+                        </li>
+                    </ul>
+                </div>
 
-<section class="sec-04 bodyz">
-    <div class="container">
-        <div class="content">
-            <div class="image">
-                <img src="{% static '/img/laundry/drycleaning.jpg' %}" alt="laundry"/>
-            </div>
-            <div class="text-box">
-                <h3 class="info-title">DRY CLEANING</h3>
-                <p class="mt-3">We use the latest technology</p>
-                <p class="mt-3">That make us the best in what we do and the care to your clothes.</p>
+                <div class="col-3">
+                    <h3 class="h9">DRY</h3>
+                    <ul class="a h9">
+                        <li>
+                            <h4>Dryer</h4>
+                            <h4>Anti Static Cloth</h4>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-4">
+                    <h3 class="h9">FOLD</h3>
+                    <ul class="a h9">
+                        <li>
+                            <h4>Carefull folding</h4>
+                            <h4>Iron (Optional)</h4>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
+        
+        <div class="col-5 mt-2">
+            <h2 class="h9 mb-3">Prices</h2>
+            <h3 class="h9">Wash & Fold</h3>
+            <div class="row">
+                <div class="col-6">
+                    <ul class="a h9">
+                        <li>
+                            <h5>Pickup & Delivery</h5>
+                            <h5>** Minimum of 15 lb. **</h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul class="a h9">
+                        <li>
+                            <h5>$2.00 lb</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3 class="h9">Bedding</h3>
+            <div class="row">
+                <div class="col-6">
+                    <ul class="a h9">
+                        <li>
+                            <h5>Twin</h5>
+                            <h5>Full</h5>
+                            <h5>Queen</h5>
+                            <h5>King</h5>
+                            <h5>Blankets any size</h5>
+                            <h5>Sheets one set</h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-4">
+                    <ul class="a h9">
+                        <li>
+                            <h5>$15.00</h5>
+                            <h5>$17.00</h5>
+                            <h5>$20.00</h5>
+                            <h5>$25.00</h5>
+                            <h5>$12.00</h5>
+                            <h5>$10.00</h5>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
-</section>
+</div>
 
 
 <script src="{% static 'js/bubblesII.js' %}" type="text/javascript"></script>

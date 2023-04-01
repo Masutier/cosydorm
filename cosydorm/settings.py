@@ -9,10 +9,13 @@ with open("/home/gabriel/prog/json_config/cosydorm.json") as config_file:
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = config['SECRET_KEY']
+RECAPTCHA_PUBLIC_KEY = config['RECAT_PUBLIC_KEY_DEBUG']
+RECAPTCHA_PRIVATE_KEY = config['RECAT_SECRET_KEY_DEBUG']
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -20,7 +23,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_bootstrap5',
+    'captcha',
     'cosydorm',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +85,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config['EMAIL_USER']# info.zanahora@gmail.com
+EMAIL_HOST_USER = config['EMAIL_USER']# info.mycozydorm@gmail.com
 EMAIL_HOST_PASSWORD = config['EMAIL_PASSWORD']
 
 LANGUAGE_CODE = 'en-us'

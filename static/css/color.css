@@ -18,16 +18,24 @@
     background-color: white;
 }
 
+.atxt0 {
+    color: #1b262c !important;
+    font-size: large;
+}
+
 .atxt1 {
     color: #9999ff !important;
 }
 
 .atxt2 {
     color: #1a1aff !important;
+    font-size: large;
 }
 
 .atxt3 {
     color: #000070 !important;
+    font-size: large;
+    font-weight: bold;
 }
 
 .b1 {
