@@ -4,8 +4,6 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from locals.models import Local
-from products.models import Product
 from .decorators import unauthenticated_user, allowed_users, admin_only
 from .forms import *
 
@@ -44,28 +42,29 @@ def register(request):
 
 
 def loginPage(request):
+    form = LogInForm()
+    
     if request.method == 'POST':
+        form = LogInForm(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
+        print('username', username)
+        print('password', password)
         user = authenticate(request, username=username, password=password)
-        if user is not None:
+        if user:
             login(request, user)
-            return redirect('locals')
+            return redirect('home')
         else:
-            messages.info(request, 'Algo no salio bien, Intentalo de nuevo')
+            messages.info(request, f'Algo no salio bien, Intentalo de nuevo')
+            return redirect('home')
 
-    title = 'Registro'
-    context = {'title':title}
+    context = {'title':'LogIn', 'form':form}
     return render(request, 'users/login.html', context)
 
 
 def userLogout(request):
-#     logout(request)
-#     messages.success(request, f'Has terminado la sesión!')
-#     return redirect('locauser = models.OneToOneField(User, on_delete=models.CASCADE)
-#     phone = models.CharField(max_length=20, null=False, blank=False)
-#     ccls')
-    pass
+    logout(request)
+    return redirect('home')
 
 
 @login_required

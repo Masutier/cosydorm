@@ -18,6 +18,12 @@ class ProfileForm(ModelForm):
     captcha = ReCaptchaField()
     class Meta:
         model = Profile
-        fields = ['phone', 'cc']
+        fields = ['phone', 'institute', 'building']
         exclude = ['user']
-        
+
+
+class LogInForm(ModelForm):
+    captcha = ReCaptchaField()
+    class Meta:
+        model = User
+        fields = ['username', 'password']

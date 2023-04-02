@@ -34,6 +34,14 @@ def storage(request):
     return render(request, 'cosydorm/storage.html', context)
 
 
+def testimonials(request):
+    contMess = ContUs.objects.all()
+    form = ContactForm()
+
+    context={"title": "Testimonials", "banner": "Testimonials", 'contMess':contMess, "form": form}
+    return render(request, 'cosydorm/testimonials.html', context)
+
+
 def fq(request):
 
     context={"title": "F & Q", "banner": "Frequently Asked Questions"}

@@ -10,12 +10,14 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('users.urls')),
 
     path('', home, name='home'),
     path('laundry', laundry, name='laundry'),
     path('dryClean', dryClean, name='dryClean'),
     path('cleaning', cleaning, name='cleaning'),
     path('storage', storage, name='storage'),
+    path('testimonials', testimonials, name='testimonials'),
     path('fq', fq, name='fq'),
     path('us', us, name='us'),
 

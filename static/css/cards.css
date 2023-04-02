@@ -53,3 +53,8 @@ bodycard{
     color: aqua;
     z-index: 111;
 }
+
+.cardbod{
+    color: aliceblue;
+    background: rgb(25, 24, 51);
+}

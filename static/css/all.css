@@ -6,29 +6,25 @@
     padding: 0px;
     box-sizing: border-box;
     color: rgb(134, 246, 250);
-    font-family: consolas;
+    font-family: 'Roboto';
 }
 .bodyI{
     color: aliceblue;
     background: rgb(47, 41, 236);
-    font-family: consolas;
 }
 .bodyx{
     color: aliceblue;
     background: rgb(64,184,240);
     background: linear-gradient(0deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
-    font-family: consolas;
 }
 .bodyy{
     background: rgb(64,184,240);
     background: radial-gradient(circle, rgba(64,184,240,1) 0%, rgba(47, 41, 236) 86%);
-    font-family: consolas;
 }
 .bodyz{
     color: aliceblue;
     background: rgb(64,184,240);
     background: linear-gradient(180deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
-    font-family: consolas;
 }
 
 /* GENERAL */
@@ -180,7 +176,6 @@ section{
 /* CLEANING */
 
 .h9 {
-    font-family: consolas;
     text-shadow: 1px 1px #130d57;
 }
 

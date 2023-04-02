@@ -8,38 +8,57 @@
 {% include 'cosydorm/partials/banner.html' %}
 
 
+{% if user.is_authenticated %}
 <div class="col-7 mx-auto p-5 mt-5 rounded bodyz">
     <form method="post">
         {% csrf_token %}
-
+    
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Name</span>
             {{ form.name }}
         </div>
-
+    
         <div class="input-group mb-3">
             {{ form.email }}
             <span class="input-group-text" id="basic-addon2">@example.com</span>
         </div>
-
+    
         <div class="input-group">
             <span class="input-group-text">Message</span>
             {{ form.message }}
         </div>
-
+    
         <div class="col-12 mx-auto">
             <div class="row">
                 <div class="col-6 mt-5 mx-auto c">
                     {{ form.captcha }}
                 </div>
-
+    
                 <div class="col-6 mt-5 d-grid gap-2 mx-auto">
                     <button type="summit" class="btn btn-outline-dark">Submit</button>
                 </div>
             </div>
         </div>
-    
+       
     </form>
+</div>
+{% endif %}
+
+<div class="col-11 mx-auto mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for item in contMess %}
+        
+            <div class="col">
+                <div class="card h-100 cardbod">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.message }}</p>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
 </div>
 
 <script src="{% static 'js/bubblesII.js' %}" type="text/javascript"></script>
