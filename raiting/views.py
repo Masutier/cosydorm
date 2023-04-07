@@ -38,10 +38,10 @@ def us(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             ContactUs = form.save()
-            messages.success(request, f"Message created and sended")
+            messages.success(request, f"Something went wrong. We are sorry")
             return redirect("home")
         else:
-            messages.error(request, f"{msg}: {form.error_messages[msg]}")
+            messages.error(request, f"Something went wrong. We are sorry")
             return redirect("home")
 
     context={"title": "US", "banner": "Contact Us", "form": form, "contactMess":contactMess}
@@ -67,7 +67,6 @@ def testing(request):
 
     context={"title":"Testing", "banner":"Review Testing", "form":form}
     return render(request, 'raiting/test.html', context)
-
 
 
 # mailing
