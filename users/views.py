@@ -1,6 +1,8 @@
+import json
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
@@ -8,39 +10,64 @@ from .decorators import unauthenticated_user, allowed_users, admin_only
 from .forms import *
 
 
-@login_required(login_url='loginPage')
-@allowed_users(allowed_roles=['admin'])
-def register(request):
+@unauthenticated_user
+def registerUser(request):
+
     if request.method == 'POST':
-        user_form = UserRegisterForm(request.POST, prefix='user')
-        profile_form= ProfileForm(request.POST, prefix='userprofile')
-        
-        if user_form.is_valid and profile_form.is_valid:
-            user = user_form.save()
-            group = Group.objects.get(name='usuario')
+        form = UserRegisterForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            group = Group.objects.get(name='user_rol')
             user.groups.add(group)
-            user.save()
-            userprofile = profile_form.save(commit=False)
-            userprofile.user = user
-
-            num = str(profile_form.cleaned_data.get('phone'))
-            if len(num) == 10:
-                phoneNum = ("("+num[:3]+")"+num[3:6]+"-"+num[6:])
-            if len(num) == 7:
-                phoneNum = ("(031)"+num[3:6]+"-"+num[6:])
-
-            userprofile.phone = phoneNum
-            userprofile.save()
-            messages.success(request, f'La cuenta fue creada, ya puede Iniciar sesión!')
-            return redirect('locals')
+            login(request, user)
+            messages.success(request, f'The User was created successfuly, Now create the rest of the info')
+            return redirect("registerProfile")
+        else:
+            messages.error(request, f"Something went wrong. We are sorry")
+            return redirect("home")
     else:
-        user_form = UserRegisterForm(request.POST, prefix='user')
-        profile_form= ProfileForm(request.POST, prefix='userprofile')
-    
-    context = {'title':'Registro', 'user_form':user_form, 'profile_form':profile_form}
-    return render(request, 'users/register.html', context)
+        form = UserRegisterForm()
+
+    context = {'title':'User Register', "banner": "User Register", 'form':form}
+    return render(request, 'users/registerUser.html', context)
 
 
+@login_required(login_url='loginPage')
+def registerProfile(request):
+    cities = []
+    userAuth = request.user
+
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+
+        if form.is_valid():
+            prof_form = form.save(commit=False)
+            prof_form.user = userAuth
+            prof_form.save()
+            messages.success(request, f'The account was created successfuly')
+            return redirect('home')
+        else:
+            messages.error(request, f"Something went wrong. We are sorry")
+            return redirect("home")
+    else:
+        form = ProfileForm()
+
+        with open('static/json/us_states_and_cities.json') as statesFile:
+            states = json.load(statesFile)
+
+            for j in states['Florida']:
+                cities.append(j)
+            cities.sort()
+
+    context = {'title':'Register Profile', "banner": "Register Profile", 'form':form, 'cities':cities}
+    return render(request, 'users/registerProfile.html', context)
+
+
+@unauthenticated_user
 def loginPage(request):
     form = LogInForm()
     
@@ -48,9 +75,8 @@ def loginPage(request):
         form = LogInForm(request.POST)
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print('username', username)
-        print('password', password)
         user = authenticate(request, username=username, password=password)
+
         if user:
             login(request, user)
             return redirect('home')
@@ -62,58 +88,56 @@ def loginPage(request):
     return render(request, 'users/login.html', context)
 
 
+
 def userLogout(request):
     logout(request)
     return redirect('home')
 
 
-@login_required
+@login_required(login_url='loginPage')
 def userProfile(request):
-    user = request.user
-    user_locals = Local.objects.filter(person=user)
-    objects = []
-    counter = 0
+    user_profile = request.user.profile
 
-    for local in user_locals:
-        product = Product.objects.filter(local=local.id)
-        for x in product:
-            data = {'label': x.label, 'category':x.category, 'local':x.local, 'name':x.name, 'price':x.price, 'discount':x.discount, 'id':x.id}
-            objects.append(data)
-            counter = counter + 1
-
-    # pagination
-    paginator = Paginator(objects, 13)
-    page = request.GET.get('page1')
-    try:
-        objects = paginator.page(page)
-    except PageNotAnInteger:
-        objects = paginator.page(1)
-    except EmptyPage:
-        objects = paginator.page(paginator.num_pages)
-    index1 = objects.number - 1
-    max_index1 = len(paginator.page_range)
-    start_index1 = index1 - 3 if index1 >= 3 else 0
-    end_index1 = index1 + 3 if index1 <= max_index1 else max_index1
-    page_range1 = paginator.page_range[start_index1:end_index1]
-
-    context = {'title':'Perfil', 'user':user, 'user_locals':user_locals, 'objects':objects, 'counter':counter, 'page_range1':page_range1}
+    context = {'title':'User Profile', 'banner':"Profile", 'user_profile':user_profile}
     return render(request, 'users/user_profile.html', context)
 
 
+@login_required(login_url='loginPage')
 def editProfile(request):
-    user = request.user.profile
-    profile_form= ProfileForm(instance=user)
+    cities = []
+    user = request.user
+    profile = request.user.profile
 
     if request.method == 'POST':
-        profile_form= ProfileForm(request.POST, request.FILES, instance=user)
-        
-        if profile_form.is_valid:
-            profile_form.save()
-            messages.success(request, f'La cuenta fue modificada, ya puede Iniciar sesión!')
-            return redirect('locals')
-    else:
-        profile_form= ProfileForm(instance=user)
+        form = ProfileForm(request.POST)
 
-    title = 'Modificar Perfil'
-    context = {'title':title, 'profile_form':profile_form}
+        if form.is_valid():
+            pform = form.save(commit=False)
+            pform.user  = request.POST.get('user')
+            pform.phone  = request.POST.get('phone')
+            pform.institute = request.POST.get('institute')
+            pform.address1 = request.POST.get('address1')
+            pform.address2 = request.POST.get('address2')
+            pform.state = request.POST.get('state')
+            pform.zip = request.POST.get('zip')
+
+            pform.save()
+
+            messages.success(request, f'Modifications was saved successfuly')
+            return redirect('userProfile')
+        else:
+
+            messages.error(request, f"Something went wrong. We are sorry")
+            return redirect("home")
+    else:
+        form = ProfileForm()
+
+        with open('static/json/us_states_and_cities.json') as statesFile:
+            states = json.load(statesFile)
+
+            for j in states['Florida']:
+                cities.append(j)
+            cities.sort()
+
+    context = {'title':'Register Profile', "banner": "Register Profile", 'form':form, 'profile':profile, 'cities':cities}
     return render(request, 'users/edit_profile.html', context)

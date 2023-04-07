@@ -15,16 +15,13 @@
 
                 <div class="col-8 mx-auto mb-4">
                     <label for="FormControl4" class="form-label atxt0">Phone Number</label>
-                    <input class="form-control" type="text" name="phone" id="phone" placeholder="{{profile.phone}}">
+                    <input class="form-control" type="text" name="phone" id="phone">
                 </div>
 
                 <div class="col-8 mx-auto mb-4">
                     <div class="mb-3">
                         <label for="FormControl5" class="form-label atxt0">Intitution</label>
-                        <select class="form-select" name="institute" id="FormControl5" aria-label="form-select">
-                            {% if user.is_authenticated %}
-                            <option class="atxt2" value="{{profile.institute}}">{{profile.institute}}</option>
-                            {% endif %}
+                        <select class="form-select" name="institute" aria-label=".form-select example">
                             <option class="atxt2" value="College">College</option>
                             <option class="atxt2" value="University">University</option>
                             <option class="atxt2" value="Private">Private Home</option>
@@ -37,12 +34,12 @@
 
                 <div class="mb-3">
                     <label for="FormControl6" class="form-label atxt0">Address 1</label>
-                    <input class="form-control" type="text" name="address1" id="FormControl6" placeholder="{{profile.address1}}">
+                    <input class="form-control" type="text" name="address1" id="FormControl6">
                 </div>
 
                 <div class="mb-3">
                     <label for="FormControl7" class="form-label atxt0">Address 2</label>
-                    <input class="form-control" type="text" name="address2" id="FormControl7" placeholder="{{profile.address2}}">
+                    <input class="form-control" type="text" name="address2" id="FormControl7">
                 </div>
 
                 <div class="col-6 mx-auto">
@@ -56,12 +53,9 @@
                     <div class="col-6">
                         <div class="mb-3">
                             <label class="form-label atxt0">City</label>
-                            <select class="form-select" name="city" aria-label="form-select">
-                                {% if user.is_authenticated %}
-                                    <option class="atxt2" name="{{profile.city}}" placeholder="{{profile.city}}">{{profile.city}}</option>
-                                {% endif %}
+                            <select class="form-select" name="city" aria-label=".form-select example">
                                 {% for city in cities %}
-                                    <option class="atxt2" name="{{city}}" placeholder="{{city}}">{{city}}</option>
+                                    <option class="atxt2" name="{{city}}" value="{{city}}">{{city}}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -69,7 +63,7 @@
                     <div class="col-6">
                         <div class="mb-3">
                             <label for="FormControl8" class="form-label atxt0">Zip Code</label>
-                            <input class="form-control" type="number" name="zip" id="FormControl8" placeholder="{{profile.zip}}">
+                            <input class="form-control" type="number" name="zip" id="FormControl8">
                         </div>
                     </div>
                 </div>

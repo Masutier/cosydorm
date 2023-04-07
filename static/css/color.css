@@ -22,21 +22,32 @@
     color: #1b262c !important;
     font-size: large;
 }
+.atxt0a {
+    color: #000070 !important;
+}
 
 .atxt1 {
     color: #9999ff !important;
 }
-
+.atxt1a {
+    color: #9999ff !important;
+    font-size: large;
+}
 .atxt2 {
     color: #1a1aff !important;
     font-size: large;
 }
-
 .atxt3 {
     color: #000070 !important;
     font-size: large;
     font-weight: bold;
 }
+.atxt5 {
+    color: #000070 !important;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 
 .b1 {
     background-color: #1b262c;

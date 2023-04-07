@@ -2,7 +2,7 @@ from django.db import models
 from django import forms
 from django.forms import ModelForm, TextInput, EmailInput
 from captcha.fields import ReCaptchaField
-from .models import ContUs
+from .models import *
 
 
 class ContactForm(ModelForm):
@@ -30,3 +30,9 @@ class ContactForm(ModelForm):
             }),
         }
 
+
+class reviewForm(ModelForm):
+    class Meta:
+        model = ReviewUs
+        fields = ['message', 'stars']
+        exclude = ['user', 'date_created']

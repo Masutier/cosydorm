@@ -3,24 +3,25 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-INSTITUTE = (
-    ('Private', 'Private'),
-    ('College', 'College'),
-    ('University', 'University'),
-    ('Airbnb', 'Airbnb'),
-    ('Other', 'Other')
-)
-
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    phone = models.CharField(max_length=20, null=False, blank=False)
-    institute = models.CharField(max_length=40, choices=INSTITUTE)
-    building = models.CharField(max_length=40, null=True, blank=True)
-    room = models.CharField(max_length=40, null=True, blank=True)
-    address = models.CharField(max_length=200, null=False, blank=False)
-    city = models.CharField(max_length=40, null=False, blank=False)
-    zip = models.IntegerField(null=False, blank=False)
+    INSTITUTE = (
+        ('Private', 'Private'),
+        ('College', 'College'),
+        ('University', 'University'),
+        ('Airbnba', 'Airbnba'),
+        ('Airbnbh', 'Airbnbh'),
+        ('Other', 'Other')
+    )
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    phone = models.CharField(max_length=10, null=False, blank=False)
+    institute = models.CharField(max_length=80, choices=INSTITUTE)
+    address1 = models.CharField(max_length=200, null=True, blank=True)
+    address2 = models.CharField(max_length=200, null=True, blank=True)
+    city = models.CharField(max_length=80, null=True, blank=True)
+    state = models.CharField(max_length=40, null=True, blank=True, default='Florida')
+    zip = models.CharField(max_length=5, null=True, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return str(self.user)

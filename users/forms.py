@@ -8,18 +8,21 @@ from .models import *
 
 
 class UserRegisterForm(UserCreationForm):
-    captcha = ReCaptchaField()
+    email = forms.EmailField()
+    first_name = forms.CharField(max_length=50)
+    last_name = forms.CharField(max_length=50)
+
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
 
 
 class ProfileForm(ModelForm):
-    captcha = ReCaptchaField()
+
     class Meta:
         model = Profile
-        fields = ['phone', 'institute', 'building']
-        exclude = ['user']
+        fields = ('phone', 'institute', 'address1', 'address2', 'city', 'zip')
+        exclude = ['user', 'state']
 
 
 class LogInForm(ModelForm):
@@ -27,3 +30,11 @@ class LogInForm(ModelForm):
     class Meta:
         model = User
         fields = ['username', 'password']
+
+
+class UserUpdateForm(UserCreationForm):
+
+    class Meta:
+        model = User
+        fields = ('first_name', 'last_name', 'email')
+        exclude = ['username', 'password1', 'password2']

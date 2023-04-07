@@ -1,0 +1,13 @@
+{% if review.stars == 5 %}
+<h4 class="atxt0a">★ ★ ★ ★ ★</h4>
+{% elif review.stars == 4 %}
+<h4 class="atxt0a">★ ★ ★ ★</h4>
+{% elif review.stars == 3 %}
+<h4 class="atxt0a">★ ★ ★</h4>
+{% elif review.stars == 2 %}
+<h4 class="atxt0a">★ ★</h4>
+{% elif review.stars == 1 %}
+<h4 class="atxt0a">★</h4>
+{% else %}
+<h4>No Rated</h4>
+{% endif %}

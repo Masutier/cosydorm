@@ -10,13 +10,13 @@
 }
 
 .bubbleWrapperI {
-    z-index: 666;
     position: relative;
-    height: 50vh;
+    height: 35vh;
     display: flex;
     background: rgb(64,184,240);
     background: linear-gradient(180deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
     overflow: hidden;
+    padding: 30px 100px;
 }
 
 .bubbleWrapperI span {
@@ -26,10 +26,10 @@
     box-shadow: inset 0px 0px 10px rgb(134, 246, 250);
     border-radius: 50%;
     pointer-events: none;
-    animation: moveBubblesIII 10.5s linear infinite;
+    animation: moveBubblesI 10.5s linear infinite;
 }
 
-@keyframes moveBubblesIII{
+@keyframes moveBubblesI{
     from{
         transform: translateY(0%);
     }
@@ -52,7 +52,7 @@
 
 .bubbleWrapperII {
     position: relative;
-    height: 50vh;
+    height: 45vh;
     display: flex;
     background: rgb(64,184,240);
     background: linear-gradient(180deg, rgba(64,184,240,1) 0%, rgb(47, 41, 236) 86%);
