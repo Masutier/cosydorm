@@ -2,74 +2,51 @@
 {% load static %}
 
 {% block title %}{{title}}{% endblock %}
+
 {% block content %}
 
 {% include 'cosydorm/partials/banner.html' %}
 
 
-<div class="col-md-11 mx-auto mt-5 pb-5 bodyx">
-    <div class="col-md-6 mx-auto bodyz">
+<div class="col-7 mx-auto p-5 mt-5 rounded bodyz">
+    <form method="post">
+        {% csrf_token %}
 
-        <div class="col-9 mx-auto pt-5">
-            <form method="POST">
-            {% csrf_token %}
-
-                <div class="mb-4">
-                    <h2 class="atxt5">{{ user.first_name }} {{ user.last_name }}</h2>
-                </div>
-
-                <div class="mb-4">
-                    <label for="Textarea1" class="form-label atxt3">Please say something</label>
-                    <textarea class="form-control" id="Textarea1" rows="3"></textarea>
-                </div>
-
-                <div class="mb-5">
-                    <label for="FormControl0" class="form-label atxt3">Rate our service please</label>
-                    <div class="input-group">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                            <label class="form-check-label atxt3" for="inlineRadio1">Bad</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label atxt3" for="inlineRadio2">2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                            <label class="form-check-label atxt3" for="inlineRadio3">3</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
-                            <label class="form-check-label atxt3" for="inlineRadio4">4</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
-                            <label class="form-check-label atxt3" for="inlineRadio5">Good</label>
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <div class="col-lg-11 mx-auto pb-5">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="d-grid gap-2 mx-auto">
-                                <button class="btn btn-info atxt0" href="{% url 'home' %}">Cancel</button>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="d-grid gap-2 mx-auto">
-                                <button class="btn btn-info atxt0" type="submit" value="submit">submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Name</span>
+            {{ form.name }}
         </div>
-    </div>
+
+        <div class="input-group mb-3">
+            {{ form.email }}
+            <span class="input-group-text" id="basic-addon2">@example.com</span>
+        </div>
+
+        <div class="mb-4">
+            <label for="Textarea1" class="form-label atxt3">Message</label>
+            <textarea class="form-control" name="{{ form.message }}" id="Textarea1" rows="3">{{ form.message }}</textarea>
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-text">Message</span>
+            {{ form.message }}
+        </div>
+
+        <div class="col-12 mx-auto">
+            <div class="row">
+                <div class="col-6 mt-5 mx-auto c">
+                    {{ form.captcha }}
+                </div>
+
+                <div class="col-6 mt-5 d-grid gap-2 mx-auto">
+                    <button type="summit" class="btn btn-outline-dark">Submit</button>
+                </div>
+            </div>
+        </div>
+    
+    </form>
 </div>
 
 <script src="{% static 'js/bubblesII.js' %}" type="text/javascript"></script>
-{% endblock content %}
+
+{% endblock %}

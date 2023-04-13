@@ -22,18 +22,17 @@
             <span class="input-group-text" id="basic-addon2">@example.com</span>
         </div>
 
-        <div class="input-group">
-            <span class="input-group-text">Message</span>
-            {{ form.message }}
+        <div class="mb-4">
+            <textarea class="form-control" name="message" id="Textarea1" rows="3" placeholder="Message"></textarea>
         </div>
 
         <div class="col-12 mx-auto">
             <div class="row">
-                <div class="col-6 mt-5 mx-auto c">
+                <div class="col-6 mt-3 mx-auto">
                     {{ form.captcha }}
                 </div>
 
-                <div class="col-6 mt-5 d-grid gap-2 mx-auto">
+                <div class="col-6 mt-3 d-grid gap-2 mx-auto">
                     <button type="summit" class="btn btn-outline-dark">Submit</button>
                 </div>
             </div>

@@ -1,40 +1,37 @@
-
-
-
-
-
-def register(request):
+@login_required(login_url='loginPage')
+def editProfile(request):
     cities = []
+
     if request.method == 'POST':
-        with open('static/json/us_states_and_cities.json') as statesFile:
-            states = json.load(statesFile)
+        form = ProfileForm(request.POST)
 
-        user_form = UserRegisterForm(request.POST)
-        profile_form= ProfileForm(request.POST)
-        
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save(commit=False)
-            print(user)
-            group = Group.objects.get(name='user_rol')
-            user.groups.add(group)
-            user.save()
-            userprofile = profile_form.save(commit=False)
-            userprofile.user = user
-            num = str(profile_form.cleaned_data.get('phone'))
-            if len(num) == 10:
-                phoneNum = ("("+num[:3]+")"+num[3:6]+"-"+num[6:])
+        form.user  = request.POST.get(request.user)
 
-            userprofile.phone = phoneNum
-            userprofile.save()
-            messages.success(request, f'The account was created successfuly')
-            return redirect('login')
+        if form.is_valid():
+            print('yess')
+            pform = form.save(commit=False)
+            pform.user  = request.POST.get(request.user)
+            pform.phone  = request.POST.get('phone')
+            pform.institute = request.POST.get('institute')
+            pform.address1 = request.POST.get('address1')
+            pform.address2 = request.POST.get('address2')
+            pform.city = request.POST.get('city')
+            pform.state = request.POST.get('state')
+            pform.zip = request.POST.get('zip')
+
+            print(request.POST.get(request.user))
+
+            #pform.save()
+
+            messages.success(request, f'Modifications was saved successfuly')
+            return redirect('userProfile')
         else:
+
             messages.error(request, f"Something went wrong. We are sorry")
             return redirect("home")
-
     else:
-        user_form = UserRegisterForm(request.POST, prefix='user')
-        profile_form = ProfileForm(request.POST, prefix='userprofile')
+        user = request.user.profile
+        profile = ProfileForm(instance=user)
 
         with open('static/json/us_states_and_cities.json') as statesFile:
             states = json.load(statesFile)
@@ -43,5 +40,5 @@ def register(request):
                 cities.append(j)
             cities.sort()
 
-    context = {'title':'Registro', "banner": "Register", 'user_form':user_form, 'profile_form':profile_form, 'cities':cities}
-    return render(request, 'users/registerUser.html', context)
+    context = {'title':'Register Profile', "banner": "Register Profile", 'profile':profile, 'cities':cities}
+    return render(request, 'users/edit_profile.html', context)

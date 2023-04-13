@@ -2,7 +2,6 @@ import os
 import json
 from pathlib import Path
 
-
 with open("/home/gabriel/prog/json_config/cosydorm.json") as config_file:
     config = json.load(config_file)
 
@@ -14,7 +13,7 @@ RECAPTCHA_PRIVATE_KEY = config['RECAT_SECRET_KEY_DEBUG']
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '192.168.0.9']
 
 INSTALLED_APPS = [
     'django.contrib.admin',

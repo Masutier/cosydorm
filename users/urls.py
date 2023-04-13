@@ -12,6 +12,7 @@ urlpatterns = [
     
     path('userProfile', userProfile, name='userProfile'),
     path('editProfile', editProfile, name='editProfile'),
+    #path('users/user_update', userUpdate, name='user_update'),
 
     path('password/reset_password/', auth_views.PasswordResetView.as_view(template_name='users/password/password_reset.html'), name='reset_password' ),
     path('password/reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name='users/password/password_reset_sent.html'), name='password_reset_done'),

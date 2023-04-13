@@ -6,64 +6,53 @@
 {% block content %}
 {% include 'cosydorm/partials/bannerI.html' %}
 
-<div class="col-md-11 p-4 txtcol29 mx-auto">
+<div class="col-md-11 p-4 mx-auto">
     <h1 class="c">{{user.username}} This is your Profile</h1>
+    <div class="col-3 d-grid gap-2 mx-auto">
+        <a href="{% url 'editProfile' %}" class="btn btn-info btn-sm">Edit Profile</a>
+    </div>
 </div>
 
-<div class="col-11 mx-auto row font-1">
+<div class="col-11 mx-auto p-4 row bodyy">
 
-
-    <div class="col-4 mx-auto mt-3 ">
-
+    <div class="col-5 mx-auto mt-3 ">
         <h2>User section</h2>
-
-        <div class="col-10 mx-auto ">
-            <label>Nombre</label>
-            {{user.first_name}}
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <h4>Nane</h4>
+                <h4>Last Name</h4>
+                <h4>Phone</h4>
+                <h4>Email</h4>
+            </div>
+            <div class="col-6 mx-auto">
+                <h4>{{user.first_name}}.</h4>
+                <h4>{{user.last_name}}.</h4>
+                <h4>{{user.profile.phone}}.</h4>
+                <h4>{{user.email}}.</h4>
+            </div>
         </div>
-        <div class="col-10 mx-auto">
-            <label>Apellido</label>
-            {{user.last_name}}
-        </div>
-
-        <div class="col-10 mx-auto">
-            <label>Numero de Teléfono</label>
-            {{user.profile.phone}}
-        </div>
-        <div class="col-10 mx-auto mb-4">
-            <label>Correo</label>
-            {{user.email}}
-        </div>
-
     </div>
-    <div class="col-4 mx-auto mt-3 ">
+
+    <div class="col-5 mx-auto mt-3 ">
         <h2>Address</h2>
-
-        <div class="col-10 mx-auto">
-            <label>Institute</label>
-            {{user.profile.institute}}
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <h4>Institute</h4>
+                <h4>Address</h4>
+                <h4>Address 2</h4>
+                <h4>City</h4>
+                <h4>State</h4>
+                <h4>Zip Code</h4>
+            </div>
+            <div class="col-6 mx-auto">
+                <h4>{{user.profile.institute}}.</h4>
+                <h4>{{user.profile.address1}}.</h4>
+                <h4>{{user.profile.address2}}.</h4>
+                <h4>{{user.profile.city}}.</h4>
+                <h4>{{user.profile.state}}.</h4>
+                <h4>{{user.profile.zip}}.</h4>
+            </div>
         </div>
-        <div class="col-10 mx-auto">
-            <label>Address</label>
-            {{user.profile.address1}}
-        </div>
-        <div class="col-10 mx-auto">
-            <label>Address 2</label>
-            {{user.profile.address2}}
-        </div>
-        <div class="col-10 mx-auto">
-            <label>City</label>
-            {{user.profile.city}}
-        </div>
-        <div class="col-10 mx-auto">
-            <label>State</label>
-            {{user.profile.state}}
-        </div>
-        <div class="col-10 mx-auto">
-            <label>Zip Code</label>
-            {{user.profile.zip}}
-        </div>
-
     </div>
 
 </div>

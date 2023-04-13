@@ -37,7 +37,7 @@ def us(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            ContactUs = form.save()
+            form.save()
             messages.success(request, f"Something went wrong. We are sorry")
             return redirect("home")
         else:

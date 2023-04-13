@@ -7,6 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .decorators import unauthenticated_user, allowed_users, admin_only
+from .models import Profile
 from .forms import *
 
 
@@ -39,14 +40,13 @@ def registerUser(request):
 @login_required(login_url='loginPage')
 def registerProfile(request):
     cities = []
-    userAuth = request.user
 
     if request.method == 'POST':
         form = ProfileForm(request.POST)
 
         if form.is_valid():
             prof_form = form.save(commit=False)
-            prof_form.user = userAuth
+            prof_form.user = request.user
             prof_form.save()
             messages.success(request, f'The account was created successfuly')
             return redirect('home')
@@ -88,7 +88,6 @@ def loginPage(request):
     return render(request, 'users/login.html', context)
 
 
-
 def userLogout(request):
     logout(request)
     return redirect('home')
@@ -96,33 +95,32 @@ def userLogout(request):
 
 @login_required(login_url='loginPage')
 def userProfile(request):
-    user_profile = request.user.profile
+    profiles = Profile.objects.get_or_create(user=request.user)
 
-    context = {'title':'User Profile', 'banner':"Profile", 'user_profile':user_profile}
+    context = {'title':'User Profile', 'banner':"Profile"}
     return render(request, 'users/user_profile.html', context)
 
 
 @login_required(login_url='loginPage')
 def editProfile(request):
     cities = []
-    user = request.user
-    profile = request.user.profile
+    user = request.user.profile
+    profile = ProfileForm(instance=user)
 
     if request.method == 'POST':
-        form = ProfileForm(request.POST)
+        form = ProfileForm(request.POST, instance=request.user.profile)
+        form.user = request.user.id
 
         if form.is_valid():
             pform = form.save(commit=False)
-            pform.user  = request.POST.get('user')
-            pform.phone  = request.POST.get('phone')
+            pform.user = request.user
+            pform.phone = request.POST.get('phone')
             pform.institute = request.POST.get('institute')
             pform.address1 = request.POST.get('address1')
             pform.address2 = request.POST.get('address2')
-            pform.state = request.POST.get('state')
+            pform.city = request.POST.get('city')
             pform.zip = request.POST.get('zip')
-
             pform.save()
-
             messages.success(request, f'Modifications was saved successfuly')
             return redirect('userProfile')
         else:
@@ -130,7 +128,6 @@ def editProfile(request):
             messages.error(request, f"Something went wrong. We are sorry")
             return redirect("home")
     else:
-        form = ProfileForm()
 
         with open('static/json/us_states_and_cities.json') as statesFile:
             states = json.load(statesFile)
@@ -139,5 +136,5 @@ def editProfile(request):
                 cities.append(j)
             cities.sort()
 
-    context = {'title':'Register Profile', "banner": "Register Profile", 'form':form, 'profile':profile, 'cities':cities}
+    context = {'title':'Register Profile', "banner": "Register Profile", 'profile':profile, 'cities':cities}
     return render(request, 'users/edit_profile.html', context)
